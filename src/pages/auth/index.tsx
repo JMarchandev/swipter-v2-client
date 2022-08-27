@@ -14,8 +14,8 @@ export const Auth = () => {
     <>
       {/* @ts-ignore */}
       <style>{authStyle(innerHeight, innerWidth, auth)}</style>
-      <div className="body--auth items-center">
-        <div className="flex min-h-screen items-center w-4/5 m-auto">
+      <div className="body--auth">
+        <div style={{minHeight: `${innerHeight}px`}} className="flex items-center w-4/5 m-auto">
           {authType === "LOGIN" && (
             <LoginCard onChangeTypeAuthForm={() => setAuthType("REGISTER")} />
           )}

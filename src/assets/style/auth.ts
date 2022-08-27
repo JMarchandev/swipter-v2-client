@@ -12,5 +12,3 @@ export const authStyle = (height: number, width: number, image: string) => {
         }
     `
 }
-
-// export const authTextInputStyle
