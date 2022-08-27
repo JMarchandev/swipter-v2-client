@@ -8,8 +8,8 @@ type Props = {
 export const ConversationList = ({ messages }: Props) => {
   return (
     <>
-      {messages.map((message) => (
-        <MessageRow message={message} />
+      {messages.map((message, i) => (
+        <MessageRow key={message.pet.name + i} message={message} />
       ))}
     </>
   );
