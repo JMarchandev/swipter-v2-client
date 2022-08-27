@@ -1,5 +1,7 @@
 import { MdHome, MdMessage, MdOutlineSwipe } from "react-icons/md";
 
+import { Link } from "react-router-dom";
+
 type Props = {
   path: string;
 };
@@ -15,12 +17,16 @@ export const BottomNavbar = ({ path }: Props) => {
           path === "HOME" ? "text-[#FA6650]" : ""
         } bg-white shadow absolute bottom-0 p-3 rounded-full`}
       >
-        <MdHome size={"3rem"} />
+        <Link to="/home">
+          <MdHome size={"3rem"} />
+        </Link>
       </div>
       <div
-        className={`${path === "MESSAGE" ? "text-[#FA6650]" : ""} m-2 pl-10`}
+        className={`${path === "MESSAGES" ? "text-[#FA6650]" : ""} m-2 pl-10`}
       >
-        <MdMessage size={"2rem"} />
+        <Link to="/messages">
+          <MdMessage size={"2rem"} />
+        </Link>
       </div>
     </nav>
   );
