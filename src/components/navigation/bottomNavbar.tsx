@@ -10,7 +10,9 @@ export const BottomNavbar = ({ path }: Props) => {
   return (
     <nav className="fixed shadow bottom-0 inset-x-0 bg-white flex justify-around items-center text-sm uppercase p-1">
       <div className={`${path === "PLAY" ? "text-[#FA6650]" : ""} m-2 pr-10`}>
-        <MdOutlineSwipe size={"2rem"} />
+        <Link to="/play">
+          <MdOutlineSwipe size={"2rem"} />
+        </Link>
       </div>
       <div
         className={`${
