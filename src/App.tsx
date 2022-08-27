@@ -1,10 +1,19 @@
-import React from 'react';
+import { Route, Routes } from "react-router-dom";
+
+import Auth from "./pages/auth";
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <style>{`
+      body {
+        margin: 0
+      }
+    `}</style>
+      <Routes>
+        <Route path="/auth" element={<Auth />} />
+      </Routes>
+    </>
   );
 }
 
