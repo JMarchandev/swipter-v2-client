@@ -1,5 +1,6 @@
+import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
+
 import { BiArrowBack } from "react-icons/bi";
-import { MdDarkMode } from "react-icons/md";
 
 type Props = {
   onClickBack: () => void;
@@ -11,9 +12,12 @@ export const DrawerTopNavbar = ({ onClickBack }: Props) => {
       <div className={`m-2`} onClick={onClickBack}>
         <BiArrowBack size={"2rem"} />
       </div>
-      <div></div>
       <div className={`m-2`}>
-        <MdDarkMode size={"1.8rem"} className="text-black" />
+        <label className="swap swap-rotate">
+          <input type="checkbox" />
+          <MdDarkMode size={"2rem"} className="swap-on fill-current text-black" />
+          <MdOutlineLightMode size={"2rem"} className="swap-off fill-current text-black" />
+        </label>
       </div>
     </nav>
   );
