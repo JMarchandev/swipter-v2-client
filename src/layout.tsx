@@ -1,24 +1,26 @@
+import { useEffect, useReducer, useState } from "react";
+
 import BottomNavbar from "./components/navigation/bottomNavbar";
 import Drawer from "./components/navigation/drawer";
 import TopNavbar from "./components/navigation/topNavbar";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
-
-const innerHeight = window.innerHeight;
-const innerWidth = window.innerWidth;
 
 type Props = {
   children: JSX.Element | JSX.Element[];
 };
 
 export const Layout = ({ children }: Props) => {
+  const innerHeight = window.innerHeight;
+  const innerWidth = window.innerWidth;
+
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
-  const [bottomNavHeight, setBottomNavHeight] = useState(0);
+  const [bottomNavHeight, setBottomNavHeight] = useState<number>(0);
+
   const { pathname } = useLocation();
   const actualPage = pathname.split("/")[1].toUpperCase();
 
   const childrenDynamicStyle = drawerOpen ? { display: "none" } : "";
-
+  
   return (
     <div
       className="bg-white"

@@ -70,8 +70,11 @@ export const Drawer = ({ open, onClickBack, height }: Props) => {
                   Reglages
                 </h2>
               </div>
-              {menuList.map((item) => (
-                <div className="py-3 px-5 text-black flex items-center justify-between">
+              {menuList.map((item, i) => (
+                <div
+                  key={item.displayName + i}
+                  className="py-3 px-5 text-black flex items-center justify-between"
+                >
                   <p>
                     <Link to="#">{item.displayName}</Link>
                   </p>
