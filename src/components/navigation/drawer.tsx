@@ -12,29 +12,34 @@ type Props = {
 
 const menuList = [
   {
-    displayName: "Mon profile",
+    displayName: "Mon profil",
     icon: <BiChevronRight size={"1.5rem"} className="text-gray" />,
+    path: "/settings/profile",
   },
   {
     displayName: "Mon compte",
     icon: <BiChevronRight size={"1.5rem"} className="text-gray" />,
+    path: "/settings/account",
   },
   {
     displayName: "Notifications",
     icon: <BiChevronRight size={"1.5rem"} className="text-gray" />,
+    path: "/settings/notifications",
   },
   {
     displayName: "Aide et contact",
     icon: <BiChevronRight size={"1.5rem"} className="text-gray" />,
+    path: "/settings/help",
   },
   {
     displayName: "About Swipet",
     icon: (
       <div className="flex items-center">
         <p className="text-sm">v0.1.0&nbsp;&nbsp;</p>
-        <BiChevronRight size={"1.5rem"} className="text-gray" />
+        {/* <BiChevronRight size={"1.5rem"} className="text-gray" /> */}
       </div>
     ),
+    path: "#",
   },
 ];
 
@@ -71,15 +76,15 @@ export const Drawer = ({ open, onClickBack, height }: Props) => {
                 </h2>
               </div>
               {menuList.map((item, i) => (
-                <div
-                  key={item.displayName + i}
-                  className="py-3 px-5 text-black flex items-center justify-between"
-                >
-                  <p>
-                    <Link to="#">{item.displayName}</Link>
-                  </p>
-                  {item.icon}
-                </div>
+                <Link to={item.path}>
+                  <div
+                    key={item.displayName + i}
+                    className="py-3 px-5 text-black flex items-center justify-between"
+                  >
+                    <p>{item.displayName}</p>
+                    {item.icon}
+                  </div>
+                </Link>
               ))}
             </div>
             <p className="text-[#FA6650] py-5 px-5 text-center">

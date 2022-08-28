@@ -1,9 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 
+import Account from "./pages/settings/account";
 import Auth from "./pages/auth";
+import Help from "./pages/settings/help";
 import Home from "./pages/home";
 import Messages from "./pages/messages";
+import Notifications from "./pages/settings/notifications";
 import Play from "./pages/play";
+import Profile from "./pages/settings/profile";
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/play" element={<Play />} />
+        <Route path="/settings/profile" element={<Profile />} />
+        <Route path="/settings/account" element={<Account />} />
+        <Route path="/settings/notifications" element={<Notifications />} />
+        <Route path="/settings/help" element={<Help />} />
         <Route path="*" element={<Auth />} />
       </Routes>
     </>
