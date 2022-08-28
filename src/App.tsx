@@ -11,7 +11,6 @@ function App() {
       <style>{`
       body {
         margin: 0;
-        background-color: #F0F0F0
       }
     `}</style>
       <Routes>
