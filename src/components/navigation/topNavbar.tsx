@@ -1,10 +1,14 @@
 import { BiMenu } from "react-icons/bi";
 import { IoNotifications } from "react-icons/io5";
 
-export const TopNavbar = () => {
+type Props = {
+  onClickBurger: () => void;
+};
+
+export const TopNavbar = ({ onClickBurger }: Props) => {
   return (
     <nav className="sticky flex justify-between items-center top-0 bg-white inset-x-0 shadow p-1 px-3">
-      <div className={`m-2`}>
+      <div className={`m-2`} onClick={onClickBurger}>
         <BiMenu size={"2rem"} />
       </div>
       <div>

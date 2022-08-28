@@ -1,4 +1,5 @@
 import BottomNavbar from "./components/navigation/bottomNavbar";
+import Drawer from "./components/navigation/drawer";
 import TopNavbar from "./components/navigation/topNavbar";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -11,6 +12,7 @@ type Props = {
 };
 
 export const Layout = ({ children }: Props) => {
+  const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [bottomNavHeight, setBottomNavHeight] = useState(0);
   const { pathname } = useLocation();
   const actualPage = pathname.split("/")[1].toUpperCase();
@@ -24,7 +26,8 @@ export const Layout = ({ children }: Props) => {
         maxWidth: `${innerWidth}px`,
       }}
     >
-      <TopNavbar />
+      <Drawer height={innerHeight} open={drawerOpen} onClickBack={() => setDrawerOpen(false)} />
+      <TopNavbar onClickBurger={() => setDrawerOpen(true)} />
       <div style={{ marginBottom: bottomNavHeight }}>{children}</div>
       <BottomNavbar
         onComponentLoad={(height) => setBottomNavHeight(height)}
