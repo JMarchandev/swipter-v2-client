@@ -17,6 +17,8 @@ export const Layout = ({ children }: Props) => {
   const { pathname } = useLocation();
   const actualPage = pathname.split("/")[1].toUpperCase();
 
+  const childrenDynamicStyle = drawerOpen ? { display: "none" } : "";
+
   return (
     <div
       className="bg-white"
@@ -26,9 +28,15 @@ export const Layout = ({ children }: Props) => {
         maxWidth: `${innerWidth}px`,
       }}
     >
-      <Drawer height={innerHeight} open={drawerOpen} onClickBack={() => setDrawerOpen(false)} />
+      <Drawer
+        height={innerHeight}
+        open={drawerOpen}
+        onClickBack={() => setDrawerOpen(false)}
+      />
       <TopNavbar onClickBurger={() => setDrawerOpen(true)} />
-      <div style={{ marginBottom: bottomNavHeight }}>{children}</div>
+      <div style={{ marginBottom: bottomNavHeight, ...childrenDynamicStyle }}>
+        {children}
+      </div>
       <BottomNavbar
         onComponentLoad={(height) => setBottomNavHeight(height)}
         path={actualPage}

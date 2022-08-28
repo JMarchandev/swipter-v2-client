@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import { BiChevronRight } from "react-icons/bi";
 import DrawerTopNavbar from "./drawerTopNavbar";
 import { Link } from "react-router-dom";
-import { MdDarkMode } from "react-icons/md";
 
 type Props = {
   open: boolean;

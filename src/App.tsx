@@ -18,6 +18,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/play" element={<Play />} />
+        <Route path="*" element={<Auth />} />
       </Routes>
     </>
   );

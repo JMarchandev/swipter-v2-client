@@ -1,9 +1,8 @@
-import { Navigate, useNavigate } from "react-router-dom";
-
 import LoginCard from "../../components/auth/loginCard";
 import RegisterCard from "../../components/auth/registerCard";
 import auth from "../../assets/images/auth/auth.jpg";
 import { authStyle } from "../../assets/style/auth";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const innerHeight = window.innerHeight;
