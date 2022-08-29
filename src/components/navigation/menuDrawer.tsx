@@ -43,7 +43,7 @@ const menuList = [
   },
 ];
 
-export const Drawer = ({ open, onClickBack, height }: Props) => {
+export const MenuDrawer = ({ open, onClickBack, height }: Props) => {
   const drawerRef = useRef(null);
 
   useEffect(() => {
@@ -52,15 +52,15 @@ export const Drawer = ({ open, onClickBack, height }: Props) => {
   }, [open]);
 
   return (
-    <div className="drawer absolute h-full">
+    <div className="drawer drawer-end absolute h-full">
       <input
         ref={drawerRef}
-        id="my-drawer"
+        id="menu-drawer"
         type="checkbox"
         className="drawer-toggle"
       />
       <div className="drawer-side">
-        <label htmlFor="my-drawer" className="drawer-overlay"></label>
+        <label htmlFor="menu-drawer" className="drawer-overlay"></label>
         <div
           style={{
             maxHeight: `${height}px`,
@@ -97,4 +97,4 @@ export const Drawer = ({ open, onClickBack, height }: Props) => {
   );
 };
 
-export default Drawer;
+export default MenuDrawer;

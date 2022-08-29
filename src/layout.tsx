@@ -1,7 +1,7 @@
 import { useEffect, useReducer, useState } from "react";
 
 import BottomNavbar from "./components/navigation/bottomNavbar";
-import Drawer from "./components/navigation/drawer";
+import MenuDrawer from "./components/navigation/menuDrawer";
 import TopNavbar from "./components/navigation/topNavbar";
 import { useLocation } from "react-router-dom";
 
@@ -13,14 +13,14 @@ export const Layout = ({ children }: Props) => {
   const innerHeight = window.innerHeight;
   const innerWidth = window.innerWidth;
 
-  const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
+  const [menuDrawerOpen, setMenuDrawerOpen] = useState<boolean>(false);
   const [bottomNavHeight, setBottomNavHeight] = useState<number>(0);
 
   const { pathname } = useLocation();
   const actualPage = pathname.split("/")[1].toUpperCase();
 
-  const childrenDynamicStyle = drawerOpen ? { display: "none" } : "";
-  
+  const childrenDynamicStyle = menuDrawerOpen ? { display: "none" } : "";
+
   return (
     <div
       className="bg-white"
@@ -30,12 +30,12 @@ export const Layout = ({ children }: Props) => {
         maxWidth: `${innerWidth}px`,
       }}
     >
-      <Drawer
+      <MenuDrawer
         height={innerHeight}
-        open={drawerOpen}
-        onClickBack={() => setDrawerOpen(false)}
+        open={menuDrawerOpen}
+        onClickBack={() => setMenuDrawerOpen(false)}
       />
-      <TopNavbar onClickBurger={() => setDrawerOpen(true)} />
+        onClickBurger={() => setMenuDrawerOpen(true)}
       <div style={{ marginBottom: bottomNavHeight, ...childrenDynamicStyle }}>
         {children}
       </div>
