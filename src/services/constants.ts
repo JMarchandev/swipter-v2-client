@@ -26,70 +26,70 @@ export const matches: MatchType[] = [
         pet: {
             name: "name",
             age: 0,
-            img: cat1,
+            image: cat1,
         }
     },
     {
         pet: {
             name: "name",
             age: 0,
-            img: dog1,
+            image: dog1,
         }
     },
     {
         pet: {
             name: "name",
             age: 0,
-            img: dog2,
+            image: dog2,
         }
     },
     {
         pet: {
             name: "name",
             age: 0,
-            img: cat2,
+            image: cat2,
         }
     },
     {
         pet: {
             name: "name",
             age: 0,
-            img: dog3,
+            image: dog3,
         }
     },
     {
         pet: {
             name: "name",
             age: 0,
-            img: dog4,
+            image: dog4,
         }
     },
     {
         pet: {
             name: "name",
             age: 0,
-            img: cat3,
+            image: cat3,
         }
     },
     {
         pet: {
             name: "name",
             age: 0,
-            img: dog11,
+            image: dog11,
         }
     },
     {
         pet: {
             name: "name",
             age: 0,
-            img: dog12,
+            image: dog12,
         }
     },
     {
         pet: {
             name: "name",
             age: 0,
-            img: dog13,
+            image: dog13,
         }
     },
 ]
@@ -99,7 +99,7 @@ export const messages: MessageType[] = [
         pet: {
             name: "Zhì",
             age: 2,
-            img: dog5
+            image: dog5
         },
         lastMessage: {
             date: 1637934735000,
@@ -111,7 +111,7 @@ export const messages: MessageType[] = [
         pet: {
             name: "Maïly",
             age: 7,
-            img: dog6
+            image: dog6
         },
         lastMessage: {
             date: 1656183765000,
@@ -123,7 +123,7 @@ export const messages: MessageType[] = [
         pet: {
             name: "Dafnée",
             age: 1,
-            img: cat4
+            image: cat4
         },
         lastMessage: {
             date: 1654815999000,
@@ -135,7 +135,7 @@ export const messages: MessageType[] = [
         pet: {
             name: "Lauréna",
             age: 9,
-            img: dog7
+            image: dog7
         },
         lastMessage: {
             date: 1648663097000,
@@ -147,7 +147,7 @@ export const messages: MessageType[] = [
         pet: {
             name: "Marie-ève",
             age: 2,
-            img: cat5
+            image: cat5
         },
         lastMessage: {
             date: 1656220398000,
@@ -159,7 +159,7 @@ export const messages: MessageType[] = [
         pet: {
             name: "Wá",
             age: 4,
-            img: dog8
+            image: dog8
         },
         lastMessage: {
             date: 1660183294000,
@@ -171,7 +171,7 @@ export const messages: MessageType[] = [
         pet: {
             name: "Marie-françoise",
             age: 1,
-            img: dog9
+            image: dog9
         },
         lastMessage: {
             date: 1640483785000,
@@ -183,7 +183,7 @@ export const messages: MessageType[] = [
         pet: {
             name: "Loïs",
             age: 10,
-            img: cat6
+            image: cat6
         },
         lastMessage: {
             date: 1648565631000,
@@ -195,7 +195,7 @@ export const messages: MessageType[] = [
         pet: {
             name: "Océanne",
             age: 3,
-            img: dog10
+            image: dog10
         },
         lastMessage: {
             date: 1648754845000,
@@ -207,7 +207,7 @@ export const messages: MessageType[] = [
         pet: {
             name: "Naëlle",
             age: 2,
-            img: cat7
+            image: cat7
         },
         lastMessage: {
             date: 1652494789000,

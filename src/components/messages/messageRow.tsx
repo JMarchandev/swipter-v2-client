@@ -16,7 +16,7 @@ export const MessageRow = ({ message }: Props) => {
   return (
     <div className="flex items-center justify-between mr-5">
       <div className="p-3 flex items-center">
-        <ImageCircle img={message.pet.img} alt={message.pet.name} />
+        <ImageCircle img={message.pet.image} alt={message.pet.name} />
         <div className="ml-3">
           <p className="text-black">{petNameRow}</p>
           <p className="text-sm">{lastMessageRow}</p>

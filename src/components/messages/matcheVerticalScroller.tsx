@@ -13,7 +13,7 @@ export const MatchVerticalScroller = ({ matches }: Props) => {
     >
       {matches.map((match, i) => (
         <div key={match.pet.name + i} className="mr-3 flex-shrink-0">
-          <ImageCircle img={match.pet.img} alt={match.pet.name} />
+          <ImageCircle img={match.pet.image} alt={match.pet.name} />
         </div>
       ))}
     </div>
