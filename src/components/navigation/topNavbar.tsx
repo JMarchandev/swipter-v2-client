@@ -7,7 +7,7 @@ type Props = {
 
 export const TopNavbar = ({ onClickBurger }: Props) => {
   return (
-    <nav className="sticky flex justify-between items-center top-0 bg-white inset-x-0 shadow p-1 px-3">
+    <nav className="sticky flex justify-between items-center z-50 top-0 bg-white inset-x-0 shadow p-1 px-3">
       <div className={`m-2`} onClick={onClickBurger}>
         <BiMenu size={"2rem"} />
       </div>
