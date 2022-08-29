@@ -1,5 +1,6 @@
 import { MatchType } from './types/Matche';
 import { MessageType } from './types/Message';
+import { UserType } from './types/User';
 import cat1 from '../assets/images/messages/cat1.jpg'
 import cat2 from '../assets/images/messages/cat2.jpg'
 import cat3 from '../assets/images/messages/cat3.jpg'
@@ -20,6 +21,31 @@ import dog6 from '../assets/images/messages/dog6.jpg'
 import dog7 from '../assets/images/messages/dog7.jpg'
 import dog8 from '../assets/images/messages/dog8.jpg'
 import dog9 from '../assets/images/messages/dog9.jpg'
+import man from "../assets/images/settings/man.jpg";
+
+export const user: UserType = {
+    fullName: "John Doe",
+    age: 29,
+    description:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus id aspernatur dolorum dolore, blanditiis necessitatibus! Sunt id, beatae, consequuntur incidunt quibusdam nihil repellendus et veniam in sint illo dignissimos.",
+    image: man,
+    score: {
+        friends: 60,
+        points: 1000,
+    },
+    pets: [
+        {
+            name: "Felix",
+            image: cat1,
+            age: 1
+        },
+        {
+            name: "Mist",
+            image: cat2,
+            age: 2
+        },
+    ],
+};
 
 export const matches: MatchType[] = [
     {
