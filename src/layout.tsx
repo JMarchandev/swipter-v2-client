@@ -43,8 +43,18 @@ export const Layout = ({ children }: Props) => {
         onClickBack={() => setNotificationsDrawerOpen(false)}
       />
       <TopNavbar
-        onClickNotifications={() => setNotificationsDrawerOpen(true)}
-        onClickBurger={() => setMenuDrawerOpen(true)}
+        onClickNotifications={() => {
+          if (menuDrawerOpen) {
+            setMenuDrawerOpen(false);
+          }
+          setNotificationsDrawerOpen(!notificationsDrawerOpen);
+        }}
+        onClickBurger={() => {
+          if (notificationsDrawerOpen) {
+            setNotificationsDrawerOpen(false);
+          }
+          setMenuDrawerOpen(!menuDrawerOpen);
+        }}
       />
       <div style={{ marginBottom: bottomNavHeight, ...childrenDynamicStyle }}>
         {children}
