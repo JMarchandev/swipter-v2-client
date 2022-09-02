@@ -16,7 +16,7 @@ export const NotificationsDrawer = ({ open, onClickBack, height }: Props) => {
     drawerRef.current.checked = open;
   }, [open]);
   return (
-    <div className="drawer drawer-end absolute h-full">
+    <div className={`drawer drawer-end absolute h-full ${!open ? '-z-10' : ""}`}>
       <input
         ref={drawerRef}
         id="notification-drawer"
