@@ -12,8 +12,8 @@ export const UserPetRow = ({ pets }: Props) => {
     <>
       <h3 className="text-m text-[#FA6650] -mt-16">Mes animaux</h3>
       <div className="my-3 flex">
-        {pets.map((pet) => (
-          <PetCard petImage={pet.image} petName={pet.name} />
+        {pets.map((pet, i) => (
+          <PetCard key={i} petImage={pet.image} petName={pet.name} />
         ))}
       </div>
     </>

@@ -52,7 +52,7 @@ export const MenuDrawer = ({ open, onClickBack, height }: Props) => {
   }, [open]);
 
   return (
-    <div className={`drawer z-20 absolute h-full ${!open ? '-z-10' : ""}`}>
+    <div className={`drawer z-20 absolute h-full ${!open ? "-z-10" : ""}`}>
       <input
         ref={drawerRef}
         id="menu-drawer"
@@ -76,11 +76,8 @@ export const MenuDrawer = ({ open, onClickBack, height }: Props) => {
                 </h2>
               </div>
               {menuList.map((item, i) => (
-                <Link to={item.path}>
-                  <div
-                    key={item.displayName + i}
-                    className="py-3 px-5 text-black flex items-center justify-between"
-                  >
+                <Link key={item.displayName + i} to={item.path}>
+                  <div className="py-3 px-5 text-black flex items-center justify-between">
                     <p>{item.displayName}</p>
                     {item.icon}
                   </div>
