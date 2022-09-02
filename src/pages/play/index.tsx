@@ -1,27 +1,23 @@
-import ActionButtons from "../../components/play/actionButtons";
 import Layout from "../../layout";
-import PetInformations from "../../components/play/petInformations";
-import dog1 from "../../assets/images/play/dog1.jpg";
+import SwipePlayer from "../../components/play/swipePlayer";
+import { pets } from "../../services/constants";
+import { useState } from "react";
 
 export const Play = () => {
+  const [lastDirection, setLastDirection] = useState();
+
+  const swiped = (direction: any, nameToDelete: any) => {
+    console.log("removing: " + nameToDelete);
+    setLastDirection(direction);
+  };
+
+  const outOfFrame = (name: any) => {
+    console.log(name + " left the screen!");
+  };
+
   return (
     <Layout>
-      <div
-        style={{
-          minHeight: window.innerHeight - 2 * 75,
-          maxHeight: window.innerHeight - 2 * 75,
-          backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(0, 0, 0, 0.52)), url(${dog1})`,
-        }}
-        className="m-3 bg-cover bg-center flex flex-col justify-end rounded shadow-xl"
-      >
-        <PetInformations
-          name="Fox"
-          age={3}
-          description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. A assumenda optio rem, nobis odio consequuntur error commodi hic temporibus quod, laudantium tempora aperiam sunt quae praesentium voluptatum itaque! Modi, error? Earum nisi in, quidem, optio, repellat eveniet voluptates magnam similique fuga id quia rem provident mollitia architecto quibusdam voluptatum. Necessitatibus?"
-          owner="Roger"
-        />
-        <ActionButtons />
-      </div>
+      <SwipePlayer pets={pets} onCardLeftScreen={outOfFrame} onSwipe={swiped} />
     </Layout>
   );
 };

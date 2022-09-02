@@ -23,6 +23,11 @@ import dog7 from '../assets/images/messages/dog7.jpg'
 import dog8 from '../assets/images/messages/dog8.jpg'
 import dog9 from '../assets/images/messages/dog9.jpg'
 import man from "../assets/images/settings/man.jpg";
+import playCat1 from '../assets/images/play/cat1.jpg'
+import playCat2 from '../assets/images/play/cat2.jpg'
+import playDog1 from '../assets/images/play/dog1.jpg'
+import playDog2 from '../assets/images/play/dog2.jpg'
+import playDog3 from '../assets/images/play/dog3.jpg'
 
 export const user: UserType = {
     fullName: "John Doe",
@@ -308,4 +313,47 @@ export const messages: MessageType[] = [
             text: "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
         },
     }
+]
+
+export const pets: PetType[] = [
+    {
+        age: 1,
+        image: playCat1,
+        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus id aspernatur dolorum dolore, blanditiis necessitatibus!",
+        name: "Lolo",
+        ownerName: "Guy",
+        id: 1
+    },
+    {
+        age: 1,
+        image: playDog1,
+        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus id aspernatur dolorum dolore, blanditiis necessitatibus!",
+        name: "Lolo",
+        ownerName: "Guy",
+        id: 2
+    },
+    {
+        age: 1,
+        image: playCat2,
+        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus id aspernatur dolorum dolore, blanditiis necessitatibus!",
+        name: "Lolo",
+        ownerName: "Guy",
+        id: 3
+    },
+    {
+        age: 1,
+        image: playDog3,
+        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus id aspernatur dolorum dolore, blanditiis necessitatibus!",
+        name: "Lolo",
+        ownerName: "Guy",
+        id: 4
+    },
+    {
+        age: 1,
+        image: playDog2,
+        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus id aspernatur dolorum dolore, blanditiis necessitatibus!",
+        name: "Lolo",
+        ownerName: "Guy",
+        id: 5
+    },
 ]
