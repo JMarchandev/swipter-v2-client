@@ -4,10 +4,10 @@ type Props = {
   name: string;
   age: number;
   description: string;
-  owner: string;
+  ownerName: string;
 };
 
-export const PetInformations = ({ name, description, age, owner }: Props) => {
+export const PetInformations = ({ name, description, age, ownerName }: Props) => {
   const petNameRow = `${name}, ${age} ${age > 1 ? "ans" : "an"}`;
 
   const petDescriptionRow = `${description.slice(0, 29)} ${
@@ -18,7 +18,7 @@ export const PetInformations = ({ name, description, age, owner }: Props) => {
       <h3 className="text-2xl">
         {petNameRow} -{" "}
         <span className="underline text-xl">
-          <Link to="/auth">{owner}</Link>
+          <Link to="/auth">{ownerName}</Link>
         </span>
       </h3>
       <p className="text-sm text-base-500 mb-3">{petDescriptionRow}</p>

@@ -1,5 +1,8 @@
 export type PetType = {
-    name: string,
-    age: number
-    image: string
+    id: number
+    name: string;
+    age: number;
+    description: string;
+    image: string;
+    ownerName: string
 }
