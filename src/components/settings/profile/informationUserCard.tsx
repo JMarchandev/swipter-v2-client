@@ -21,7 +21,7 @@ export const InformationUserCard = ({
   return (
     <>
       <img
-        className="m-auto relative z-20  object-cover rounded-full border w-4/6 h-4/6"
+        className="m-auto z-10 relative object-cover rounded-full border w-4/6 h-4/6"
         src={userImage}
         alt={userName + "-img"}
       />

@@ -18,7 +18,7 @@ export const BottomNavbar = ({ path, onComponentLoad }: Props) => {
   return (
     <nav
       ref={ref}
-      className="fixed shadow bottom-0 inset-x-0 bg-white flex justify-around items-center border text-sm uppercase p-1"
+      className="fixed z-30 shadow bottom-0 inset-x-0 bg-white flex justify-around items-center border text-sm uppercase p-1"
     >
       <div className={`${path === "PLAY" ? "text-[#FA6650]" : ""} m-2 pr-10`}>
         <Link to="/play">

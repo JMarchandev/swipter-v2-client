@@ -52,7 +52,7 @@ export const MenuDrawer = ({ open, onClickBack, height }: Props) => {
   }, [open]);
 
   return (
-    <div className="drawer absolute z-30 h-full">
+    <div className="drawer z-20 absolute h-full">
       <input
         ref={drawerRef}
         id="menu-drawer"
