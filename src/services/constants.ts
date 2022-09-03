@@ -172,6 +172,7 @@ export const messages: MessageType[] = [
             ownerName: "Paul",
             id: 1
         },
+        id: 1,
         lastMessage: {
             date: 1637934735000,
             seen: true,
@@ -187,6 +188,7 @@ export const messages: MessageType[] = [
             ownerName: "Paul",
             id: 2
         },
+        id: 1,
         lastMessage: {
             date: 1656183765000,
             seen: false,
@@ -202,6 +204,7 @@ export const messages: MessageType[] = [
             ownerName: "Paul",
             id: 3
         },
+        id: 1,
         lastMessage: {
             date: 1654815999000,
             seen: false,
@@ -217,6 +220,7 @@ export const messages: MessageType[] = [
             ownerName: "Paul",
             id: 4
         },
+        id: 1,
         lastMessage: {
             date: 1648663097000,
             seen: true,
@@ -232,6 +236,7 @@ export const messages: MessageType[] = [
             ownerName: "Paul",
             id: 5
         },
+        id: 1,
         lastMessage: {
             date: 1656220398000,
             seen: true,
@@ -247,6 +252,7 @@ export const messages: MessageType[] = [
             ownerName: "Paul",
             id: 6
         },
+        id: 1,
         lastMessage: {
             date: 1660183294000,
             seen: true,
@@ -262,6 +268,7 @@ export const messages: MessageType[] = [
             ownerName: "Paul",
             id: 6
         },
+        id: 1,
         lastMessage: {
             date: 1640483785000,
             seen: false,
@@ -277,6 +284,7 @@ export const messages: MessageType[] = [
             ownerName: "Paul",
             id: 7
         },
+        id: 1,
         lastMessage: {
             date: 1648565631000,
             seen: true,
@@ -292,6 +300,7 @@ export const messages: MessageType[] = [
             ownerName: "Paul",
             id: 8
         },
+        id: 1,
         lastMessage: {
             date: 1648754845000,
             seen: false,
@@ -307,6 +316,7 @@ export const messages: MessageType[] = [
             ownerName: "Paul",
             id: 9
         },
+        id: 1,
         lastMessage: {
             date: 1652494789000,
             seen: true,
