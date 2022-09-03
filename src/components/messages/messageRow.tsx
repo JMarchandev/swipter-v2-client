@@ -11,7 +11,7 @@ export const MessageRow = ({ message, onClickMessageRow }: Props) => {
   }`;
 
   const lastMessageRow = `${message.lastMessage.text.slice(0, 29)} ${
-    message.lastMessage.text.length > 30 && "..."
+    message.lastMessage.text.length > 30 ? "..." : ""
   }`;
 
   return (
@@ -26,7 +26,7 @@ export const MessageRow = ({ message, onClickMessageRow }: Props) => {
           <p className="text-sm">{lastMessageRow}</p>
         </div>
       </div>
-      {message.lastMessage.seen && (
+      {!message.lastMessage.seen && (
         <div className="w-3 h-3 bg-sky-400 border rounded-full" />
       )}
     </div>
