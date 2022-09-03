@@ -16,7 +16,7 @@ export const NotificationsDrawer = ({ open, onClickBack, height }: Props) => {
     drawerRef.current.checked = open;
   }, [open]);
   return (
-    <div className={`drawer drawer-end absolute h-full ${!open ? '-z-10' : ""}`}>
+    <div className={`drawer z-20 drawer-end absolute h-full ${!open ? '-z-10' : ""}`}>
       <input
         ref={drawerRef}
         id="notification-drawer"
@@ -41,9 +41,6 @@ export const NotificationsDrawer = ({ open, onClickBack, height }: Props) => {
               </div>
 
             </div>
-            <p className="text-[#FA6650] py-5 px-5 text-center">
-              {/* <Link to="/auth">Déconnexion</Link> */}
-            </p>
           </div>
         </div>
       </div>
