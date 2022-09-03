@@ -5,4 +5,5 @@ export type PetType = {
     description: string;
     image: string;
     ownerName: string
+    ownerId: number
 }

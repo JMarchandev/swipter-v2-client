@@ -1,5 +1,5 @@
+import { ConversationType } from './types/Conversation';
 import { MatchType } from './types/Matche';
-import { MessageType } from './types/Message';
 import { PetType } from './types/Pet';
 import { UserType } from './types/User';
 import cat1 from '../assets/images/messages/cat1.jpg'
@@ -30,6 +30,7 @@ import playDog2 from '../assets/images/play/dog2.jpg'
 import playDog3 from '../assets/images/play/dog3.jpg'
 
 export const user: UserType = {
+    id: 100,
     fullName: "John Doe",
     age: 29,
     description:
@@ -46,7 +47,8 @@ export const user: UserType = {
             age: 1,
             ownerName: "Paul",
             description: "description",
-            id: 1
+            id: 1,
+            ownerId: 100
         },
         {
             name: "Mist",
@@ -54,7 +56,8 @@ export const user: UserType = {
             age: 2,
             ownerName: "Paul",
             description: "description",
-            id: 2
+            id: 2,
+            ownerId: 100
         },
     ],
 };
@@ -67,102 +70,13 @@ export const matches: MatchType[] = [
             image: cat1,
             description: "description",
             ownerName: "ownerName",
-            id: 10
-        }
-    },
-    {
-        pet: {
-            name: "name",
-            age: 0,
-            image: dog1,
-            description: "description",
-            ownerName: "ownerName",
-            id: 1
-        }
-    },
-    {
-        pet: {
-            name: "name",
-            age: 0,
-            image: dog2,
-            description: "description",
-            ownerName: "ownerName",
-            id: 2
-        }
-    },
-    {
-        pet: {
-            name: "name",
-            age: 0,
-            image: cat2,
-            description: "description",
-            ownerName: "ownerName",
-            id: 3
-        }
-    },
-    {
-        pet: {
-            name: "name",
-            age: 0,
-            image: dog3,
-            description: "description",
-            ownerName: "ownerName",
-            id: 4
-        }
-    },
-    {
-        pet: {
-            name: "name",
-            age: 0,
-            image: dog4,
-            description: "description",
-            ownerName: "ownerName",
-            id: 5
-        }
-    },
-    {
-        pet: {
-            name: "name",
-            age: 0,
-            image: cat3,
-            description: "description",
-            ownerName: "ownerName",
-            id: 6
-        }
-    },
-    {
-        pet: {
-            name: "name",
-            age: 0,
-            image: dog11,
-            description: "description",
-            ownerName: "ownerName",
-            id: 7
-        }
-    },
-    {
-        pet: {
-            name: "name",
-            age: 0,
-            image: dog12,
-            description: "description",
-            ownerName: "ownerName",
-            id: 8
-        }
-    },
-    {
-        pet: {
-            name: "name",
-            age: 0,
-            image: dog13,
-            description: "description",
-            ownerName: "ownerName",
-            id: 9
+            id: 10,
+            ownerId: 90
         }
     },
 ]
 
-export const messages: MessageType[] = [
+export const conversations: ConversationType[] = [
     {
         pet: {
             name: "Zhì",
@@ -170,159 +84,46 @@ export const messages: MessageType[] = [
             image: dog5,
             description: "description",
             ownerName: "Paul",
+            ownerId: 101,
             id: 1
         },
         id: 1,
         lastMessage: {
             date: 1637934735000,
-            seen: true,
-            text: "Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. ",
-        },
-    },
-    {
-        pet: {
-            name: "Maïly",
-            age: 7,
-            image: dog6,
-            description: "description",
-            ownerName: "Paul",
-            id: 2
-        },
-        id: 1,
-        lastMessage: {
-            date: 1656183765000,
             seen: false,
-            text: "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. ",
+            text: "Nice !",
         },
+        messages: [
+            {
+                content: "Hello ! How are you ?",
+                authorId: 101, 
+            },
+            {
+                content: "I'm fine ! you ?",
+                authorId: 100, 
+            },
+            {
+                content: "Nice !",
+                authorId: 100, 
+            },
+            {
+                content: "Top !",
+                authorId: 101, 
+            },
+            {
+                content: "Look my Dog ! ",
+                authorId: 101, 
+            },
+            {
+                content: "I saw !",
+                authorId: 100, 
+            },
+            {
+                content: "I love it !",
+                authorId: 100, 
+            },
+        ]
     },
-    {
-        pet: {
-            name: "Dafnée",
-            age: 1,
-            image: cat4,
-            description: "description",
-            ownerName: "Paul",
-            id: 3
-        },
-        id: 1,
-        lastMessage: {
-            date: 1654815999000,
-            seen: false,
-            text: "Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. ",
-        },
-    },
-    {
-        pet: {
-            name: "Lauréna",
-            age: 9,
-            image: dog7,
-            description: "description",
-            ownerName: "Paul",
-            id: 4
-        },
-        id: 1,
-        lastMessage: {
-            date: 1648663097000,
-            seen: true,
-            text: "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. ",
-        },
-    },
-    {
-        pet: {
-            name: "Marie-ève",
-            age: 2,
-            image: cat5,
-            description: "description",
-            ownerName: "Paul",
-            id: 5
-        },
-        id: 1,
-        lastMessage: {
-            date: 1656220398000,
-            seen: true,
-            text: "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. ",
-        },
-    },
-    {
-        pet: {
-            name: "Wá",
-            age: 4,
-            image: dog8,
-            description: "description",
-            ownerName: "Paul",
-            id: 6
-        },
-        id: 1,
-        lastMessage: {
-            date: 1660183294000,
-            seen: true,
-            text: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.",
-        },
-    },
-    {
-        pet: {
-            name: "Marie-françoise",
-            age: 1,
-            image: dog9,
-            description: "description",
-            ownerName: "Paul",
-            id: 6
-        },
-        id: 1,
-        lastMessage: {
-            date: 1640483785000,
-            seen: false,
-            text: "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.",
-        },
-    },
-    {
-        pet: {
-            name: "Loïs",
-            age: 10,
-            image: cat6,
-            description: "description",
-            ownerName: "Paul",
-            id: 7
-        },
-        id: 1,
-        lastMessage: {
-            date: 1648565631000,
-            seen: true,
-            text: "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.",
-        },
-    },
-    {
-        pet: {
-            name: "Océanne",
-            age: 3,
-            image: dog10,
-            description: "description",
-            ownerName: "Paul",
-            id: 8
-        },
-        id: 1,
-        lastMessage: {
-            date: 1648754845000,
-            seen: false,
-            text: "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.",
-        },
-    },
-    {
-        pet: {
-            name: "Naëlle",
-            age: 2,
-            image: cat7,
-            description: "description",
-            ownerName: "Paul",
-            id: 9
-        },
-        id: 1,
-        lastMessage: {
-            date: 1652494789000,
-            seen: true,
-            text: "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
-        },
-    }
 ]
 
 export const pets: PetType[] = [
@@ -332,7 +133,8 @@ export const pets: PetType[] = [
         description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus id aspernatur dolorum dolore, blanditiis necessitatibus!",
         name: "Lolo",
         ownerName: "Guy",
-        id: 1
+        id: 1,
+        ownerId: 0
     },
     {
         age: 1,
@@ -340,7 +142,8 @@ export const pets: PetType[] = [
         description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus id aspernatur dolorum dolore, blanditiis necessitatibus!",
         name: "Lolo",
         ownerName: "Guy",
-        id: 2
+        id: 2,
+        ownerId: 0
     },
     {
         age: 1,
@@ -348,7 +151,8 @@ export const pets: PetType[] = [
         description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus id aspernatur dolorum dolore, blanditiis necessitatibus!",
         name: "Lolo",
         ownerName: "Guy",
-        id: 3
+        id: 3,
+        ownerId: 0
     },
     {
         age: 1,
@@ -356,7 +160,8 @@ export const pets: PetType[] = [
         description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus id aspernatur dolorum dolore, blanditiis necessitatibus!",
         name: "Lolo",
         ownerName: "Guy",
-        id: 4
+        id: 4,
+        ownerId: 0
     },
     {
         age: 1,
@@ -364,6 +169,7 @@ export const pets: PetType[] = [
         description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus id aspernatur dolorum dolore, blanditiis necessitatibus!",
         name: "Lolo",
         ownerName: "Guy",
-        id: 5
+        id: 5,
+        ownerId: 0
     },
 ]

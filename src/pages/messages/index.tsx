@@ -1,4 +1,4 @@
-import { matches, messages } from "../../services/constants";
+import { conversations, matches } from "../../services/constants";
 
 import ConversationList from "../../components/messages/conversationList";
 import Layout from "../../layout";
@@ -17,7 +17,7 @@ export const Messages = () => {
       <MatchVerticalScroller matches={matches} />
       <h3 className="text-sm text-black-700 ml-3 mt-3">Messages</h3>
       <ConversationList
-        messages={messages}
+        conversations={conversations}
         onClickMessageRow={handleClickMessageRow}
       />
     </Layout>

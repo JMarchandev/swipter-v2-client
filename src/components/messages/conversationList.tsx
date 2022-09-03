@@ -1,16 +1,16 @@
+import { ConversationType } from "../../services/types/Conversation";
 import MessageRow from "./messageRow";
-import { MessageType } from "../../services/types/Message";
 
 type Props = {
-  messages: MessageType[];
+  conversations: ConversationType[];
   onClickMessageRow: (id: number) => void
 };
 
-export const ConversationList = ({ messages, onClickMessageRow }: Props) => {
+export const ConversationList = ({ conversations, onClickMessageRow }: Props) => {
   return (
     <>
-      {messages.map((message, i) => (
-        <MessageRow key={message.pet.name + i} message={message} onClickMessageRow={onClickMessageRow} />
+      {conversations.map((conversation, i) => (
+        <MessageRow key={conversation.pet.name + i} message={conversation} onClickMessageRow={onClickMessageRow} />
       ))}
     </>
   );
