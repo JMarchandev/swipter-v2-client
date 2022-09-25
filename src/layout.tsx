@@ -1,6 +1,7 @@
 import BottomNavbar from "./components/navigation/bottomNavbar";
 import MenuDrawer from "./components/navigation/menuDrawer";
 import NotificationsDrawer from "./components/navigation/notificationsDrawer";
+import Toast from "./components/common/toast";
 import TopNavbar from "./components/navigation/topNavbar";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -32,6 +33,7 @@ export const Layout = ({ children }: Props) => {
         maxWidth: `${innerWidth}px`,
       }}
     >
+      <Toast />
       <MenuDrawer
         height={innerHeight}
         open={menuDrawerOpen}
