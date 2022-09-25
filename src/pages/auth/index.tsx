@@ -1,25 +1,41 @@
+import * as UserService from "../../services/userService";
+
+import {
+  AuthResponse,
+  LoginRequest,
+  RegisterRequest,
+} from "../../services/types/auth";
+import { useContext, useState } from "react";
+
+import { AuthContext } from "../../services/providers/AuthProvider";
 import LoginCard from "../../components/auth/loginCard";
 import RegisterCard from "../../components/auth/registerCard";
-import auth from "../../assets/images/auth/auth.jpg";
+import Toast from "../../components/common/toast";
 import { authStyle } from "../../assets/style/auth";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 const innerHeight = window.innerHeight;
 const innerWidth = window.innerWidth;
 
 export const Auth = () => {
-  const [authType, setAuthType] = useState<"LOGIN" | "REGISTER">("REGISTER");
-  let navigate = useNavigate();
+  const [authType, setAuthType] = useState<"LOGIN" | "REGISTER">("LOGIN");
+  const auth = useContext(AuthContext);
 
-  const handleSubmit = () => {
-    navigate('/home')
+  const handleSubmitRegister = (req: RegisterRequest) => {
+    UserService.register(req).then((res: { data: AuthResponse }) => {
+      auth?.onLogin(res.data.token);
+    });
+  };
+  const handleSubmitLogin = (req: LoginRequest) => {
+    UserService.login(req).then((res: { data: AuthResponse }) => {
+      auth?.onLogin(res.data.token);
+    });
   };
 
   return (
     <>
       {/* @ts-ignore */}
       <style>{authStyle(innerHeight, innerWidth, auth)}</style>
+      <Toast />
       <div className="body--auth">
         <div
           style={{ minHeight: `${innerHeight}px` }}
@@ -27,13 +43,13 @@ export const Auth = () => {
         >
           {authType === "LOGIN" && (
             <LoginCard
-              onSubmit={handleSubmit}
+              onSubmit={handleSubmitLogin}
               onChangeTypeAuthForm={() => setAuthType("REGISTER")}
             />
           )}
           {authType === "REGISTER" && (
             <RegisterCard
-              onSubmit={handleSubmit}
+              onSubmit={handleSubmitRegister}
               onChangeTypeAuthForm={() => setAuthType("LOGIN")}
             />
           )}
