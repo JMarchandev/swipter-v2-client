@@ -1,8 +1,9 @@
 import LoginForm from "../forms/auth/loginForm";
+import { LoginRequest } from "../../services/types/auth";
 
 type Props = {
   onChangeTypeAuthForm: () => void;
-  onSubmit: () => void;
+  onSubmit: (req: LoginRequest) => void;
 };
 
 export const LoginCard = ({ onChangeTypeAuthForm, onSubmit }: Props) => {

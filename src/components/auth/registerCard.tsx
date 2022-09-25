@@ -1,8 +1,9 @@
 import RegisterForm from "../forms/auth/registerForm";
+import { RegisterRequest } from "../../services/types/auth";
 
 type Props = {
   onChangeTypeAuthForm: () => void;
-  onSubmit: () => void
+  onSubmit: (req: RegisterRequest) => void
 };
 
 export const RegisterCard = ({ onChangeTypeAuthForm, onSubmit }: Props) => {
