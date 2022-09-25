@@ -11,3 +11,17 @@ export type UserType = {
     },
     pets: PetType[]
 };
+
+/**
+ * Real user form API
+ */
+export type User = {
+    id: number,
+    firstName: string
+    lastName: string
+    description: string | null,
+    email: string
+    email_verified_at: boolean | null,
+    created_at: string
+    updated_at: string
+}
