@@ -10,6 +10,7 @@ import Messages from "./pages/messages";
 import Notifications from "./pages/settings/notifications";
 import Play from "./pages/play";
 import Profile from "./pages/settings/profile";
+import ProtectedRoute from "./services/providers/ProtectedRoute";
 
 function App() {
   return (
@@ -20,18 +21,74 @@ function App() {
       }
     `}</style>
       <AuthProvider>
-      <Routes>
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/messages/chat/:id" element={<Chat />} />
-        <Route path="/play" element={<Play />} />
-        <Route path="/settings/profile" element={<Profile />} />
-        <Route path="/settings/account" element={<Account />} />
-        <Route path="/settings/notifications" element={<Notifications />} />
-        <Route path="/settings/help" element={<Help />} />
-        <Route path="*" element={<Auth />} />
-      </Routes>
+        <Routes>
+          <Route path="/auth" element={<Auth />} />
+          <Route
+            path="/home"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/messages"
+            element={
+              <ProtectedRoute>
+                <Messages />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/messages/chat/:id"
+            element={
+              <ProtectedRoute>
+                <Chat />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/play"
+            element={
+              <ProtectedRoute>
+                <Play />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/settings/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/settings/account"
+            element={
+              <ProtectedRoute>
+                <Account />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/settings/notifications"
+            element={
+              <ProtectedRoute>
+                <Notifications />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/settings/help"
+            element={
+              <ProtectedRoute>
+                <Help />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<Auth />} />
+        </Routes>
       </AuthProvider>
     </>
   );
